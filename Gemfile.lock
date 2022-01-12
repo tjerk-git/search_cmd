@@ -105,6 +105,7 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    json (2.6.1)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.7.0)
@@ -141,6 +142,11 @@ GEM
     nokogiri (1.13.0-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
+    postmark (1.22.0)
+      json
+    postmark-rails (0.21.0)
+      actionmailer (>= 3.0.0)
+      postmark (>= 1.21.3, < 2.0)
     public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -231,6 +237,7 @@ DEPENDENCIES
   jbuilder
   letter_opener
   pg (~> 1.1)
+  postmark-rails
   puma (~> 5.0)
   rails (~> 7.0.1)
   redis (~> 4.0)
