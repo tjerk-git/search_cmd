@@ -5,7 +5,7 @@ Rails.application.configure do
 
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.action_mailer.default_url_options = { host: 'https://play.cmdlwd.nl' }
+  config.action_mailer.default_url_options = { host: 'https://searchcmd.herokuapp.com' }
   config.action_mailer.delivery_method = :postmark
 
   config.action_mailer.postmark_settings = {
