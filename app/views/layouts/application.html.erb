@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zoeken op CMD</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <div class="login">
+        <% if logged_in? %>
+            Hey, <%= current_user.name %><br>
+              <%= link_to "Edit your profile", edit_user_path %> or <%= link_to "Log out", logout_path %>
+        <% else %>
+            <%= link_to "Log in", login_path %> or <%= link_to "Claim your profile!", new_user_path %>
+        <% end %>
+      </div>
+    </header>
+    <main class="container">
+
+    <script>
+      <% flash.each do |key, message| %>
+         swal("", "<%= message %>", "<%= key %>");
+      <% end %>
+    </script>
+
+      <% if show_search %>
+        <%= render "users/search_form" %>
+        <div id="search_results"></div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<%= form_with(model: user) do |form| %>
+  <% if user.errors.any? %>
+    <div class="errors">
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name, placeholder: "Your full name" %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, placeholder: "you@student.nhlstenden.com" %>
+  </div>
+
+  <div>
+    <%= form.label :bio, style: "display: block" %>
+    <%= form.text_area :bio, maxlength: "255", placeholder: "Your skills, your minor: keep it short, sweet and simple (max 255)" %>
+  </div>
+
+  <div>
+   <%  if request.path == "/users/new" %>
+      <%= form.submit "Create my profile, send me an email!" %>
+    <% else %>
+      <%= form.submit "Update" %>
+    <% end %>
+  </div>
+<% end %>

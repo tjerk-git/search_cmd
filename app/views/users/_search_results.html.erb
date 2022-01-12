@@ -1,0 +1,12 @@
+
+<% unless users.empty? %>
+  <% users.each do |user| %>
+  <div class="search_result">
+    <%= link_to highlight(user.name, params[:name_search]), user_path(user.slug)  %>
+  </div>
+  <% end %>
+<% else %>
+<br>
+  No people found, sorry, maybe you want to add <%= link_to "yourself", new_user_path %>!
+<% end %>
+

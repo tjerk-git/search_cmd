@@ -1,0 +1,9 @@
+
+<h1>Edit your profile</h1>
+
+<%= render "form", user: @user %>
+
+<details>
+  <summary>Delete your account:</summary>
+  <%= render "delete_form", user: @user %>
+</details>

@@ -1,0 +1,132 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ *, *:before, *:after {
+    box-sizing: border-box;
+}
+
+h1 { font-family: "Open Sans"; font-size: 24px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 26.399999618530273px; } h3 { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: bold; line-height: 15.399999618530273px; } p { font-family: "Open Sans"; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 20px; } blockquote { font-family: "Open Sans"; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 30px; } pre { font-family: "Open Sans"; font-size: 13px; font-style: normal; font-variant: normal; font-weight: 400; line-height: 18.571430206298828px; }
+
+.login{
+    float:right;
+    padding:20px;
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    font-size: 1.2em;
+    font-family: "Open Sans";
+}
+
+.container{
+    max-width: 1130px;
+    padding-top:12%;
+    margin: 0 auto;
+    padding-right:5%;
+    padding-left:5%;
+}
+
+address, blockquote, dl, figure, form, ol, p, pre, table, ul {
+    margin-top: 0;
+    font-style: normal;
+    font-size: 1.2em;
+}
+
+input{
+    width:100%;
+}
+
+input[type=search], input[type=text] {
+    padding: 20px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    font-size:1.2em;
+}
+
+textarea {
+    padding: 20px;
+    margin: 10px 0;
+    border: 2px solid #eee;
+    font-size:0.8em;
+    width:100%;
+    height:max-content;
+}
+
+input[type=submit]{
+    padding:20px;
+    border-radius: 10px;
+    background-color:rgb(113, 188, 254);
+    font-size:1em;
+    color:white;
+    border: 2px solid #eee;
+}
+
+input[type=submit]:hover{
+    padding:20px;
+    border-radius: 10px;
+    background-color:rgb(68, 168, 255);
+    font-size:1em;
+    color:white;
+    border: 2px solid #eee;
+}
+
+button{
+    padding:20px;
+    border-radius: 10px;
+    background-color:white;
+    font-size:0.9em;
+    border: 2px solid #eee;
+    margin:10px 10px 10px 0px;
+}
+
+.errors{
+    background-color:white;
+    color:red;
+    font-size:0.7em;
+    padding:10px;
+    border: 2px solid #eee;
+}
+
+.search_result{
+    background-color:rgb(88, 152, 249);
+    border-radius: 5px;
+    padding:15px;
+    width:100%;
+    margin-bottom:5px;
+}
+.search_result a{
+    color:white;
+}
+.search_result a:hover{
+    color:rgb(225, 225, 225);
+}
+
+.search_result:hover {
+    background-color:rgb(18, 90, 198);
+    cursor: pointer;
+}
+
+.profile{
+    margin-top:20px;
+    border-radius: 5px;
+    border: 2px solid #eee;
+    padding:20px;
+}
+
+.profile p{
+    line-height: 1.15;
+}
