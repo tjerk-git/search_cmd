@@ -9,9 +9,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :postmark
 
   config.action_mailer.postmark_settings = {
-    api_token: Rails.application.credentials.postmark_api_token
+    api_token: ENV['POSTMARK_API_KEY']
   }
-  
+
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
