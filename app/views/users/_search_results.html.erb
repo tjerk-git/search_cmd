@@ -1,12 +1,15 @@
 
 <% unless users.empty? %>
   <% users.each do |user| %>
+  <%= link_to user_path(user.slug) do %>
   <div class="search_result">
-    <%= link_to highlight(user.name, params[:name_search]), user_path(user.slug)  %>
+    <% if user.role == 1 %>Teacher | <% else %> Student | <% end %>
+    <%=  highlight(user.name, params[:name_search])  %>
     <span class="search_description">
     - <%= user.bio %>
     </span>
   </div>
+    <% end %>
   <% end %>
 <% else %>
 <br>
