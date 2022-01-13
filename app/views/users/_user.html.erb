@@ -14,8 +14,7 @@
 </table>
 
   <p>
-    <h1><%= user.name %></h1>
-
+    <h1><% if user.role == 1 %>Teacher | <% else %> Student | <% end %> <%= user.name %></h1>
   </p>
   <p>
     <%= user.bio %>
