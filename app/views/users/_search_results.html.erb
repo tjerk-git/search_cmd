@@ -3,6 +3,9 @@
   <% users.each do |user| %>
   <div class="search_result">
     <%= link_to highlight(user.name, params[:name_search]), user_path(user.slug)  %>
+    <span class="search_description">
+    - <%= user.bio %>
+    </span>
   </div>
   <% end %>
 <% else %>
