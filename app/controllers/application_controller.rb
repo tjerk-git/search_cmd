@@ -18,10 +18,6 @@ class ApplicationController < ActionController::Base
         redirect_to root_path unless logged_in?
     end
 
-    def send_mail(user)
-        MagicLinkMailer.sign_in_mail(user).deliver_now
-    end
-
     def show_search
         if request.path == "/users/new" || request.path == "/login" || request.path == "/users/edit"|| request.path == "/user/edit"
             return false

@@ -135,3 +135,13 @@ button{
     font-size:small;
     color:rgb(237, 237, 237);
 }
+
+.icon {
+    height:48px;
+    width:48px;
+    margin:5px;
+}
+
+.contact_info{
+    float:right;
+}

@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
   
     respond_to do |format|
-      if @user.save && send_mail(@user)
+      if @user.save && MagicLinkMailer.confirm_mail(@user).deliver_now
         format.html { redirect_to root_url, succes: "Check your email" }
       else
         format.html { render :new, status: :unprocessable_entity }

@@ -5,7 +5,7 @@ class User < ApplicationRecord
     before_validation :create_slug
     before_validation :make_teacher
     before_validation :create_teams_link
-
+    
     # Validates for NHLSTENDEN.com and STUDENT.NHLSTENDEN.COM
     validates :email, format: {
       with: /\b[A-Z0-9._%a-z\-]+@(?:student.)?nhlstenden\.com\z/, message: "must be a nhlstenden.com account"
@@ -34,5 +34,7 @@ class User < ApplicationRecord
     scope :filter_by_name, -> (name) {
          where('name ILIKE ?', "%#{name}%")
          .or(where('bio ILIKE ?', "%#{name}%"))
+         .and(where(confirm: 1))
          }
+         
 end

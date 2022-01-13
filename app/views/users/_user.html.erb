@@ -1,6 +1,21 @@
 <div id="<%= dom_id user %>" class="profile">
+
+<table class="contact_info">
+<thead>
+  <tr>
+    <td><a href="mailto:<%= user.email%>">
+      <img src="/email.png" class="icon">
+    </a>
+    <td><a href="<%= user.teams_link %>">
+     <img src="/teams.png" class="icon">
+    </a></td></td>
+  </tr>
+</thead>
+</table>
+
   <p>
-    <strong><%= user.name %></strong>
+    <h1><%= user.name %></h1>
+
   </p>
   <p>
     <%= user.bio %>
