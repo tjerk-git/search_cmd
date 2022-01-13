@@ -126,6 +126,10 @@ button{
     cursor: pointer;
 }
 
+.register_link{
+    color:orange!important;
+}
+
 .profile{
     margin-top:20px;
     border-radius: 5px;
