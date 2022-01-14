@@ -14,10 +14,13 @@
     <%= form.text_field :name, placeholder: "Your full name" %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email, placeholder: "you@student.nhlstenden.com" %>
-  </div>
+    <div>
+        <label class="switch">
+        <%= form.check_box :show_email , style: "display: block;"%>
+            <span class="slider round"></span>
+        </label>
+        Show e-mail on profile?
+    </div>
 
   <div>
     <%= form.label :bio, style: "display: block", value: "Describe yourself in tags" %>
@@ -25,10 +28,6 @@
   </div>
 
   <div>
-   <%  if request.path == "/users/new" %>
-      <%= form.submit "Create my profile" %>
-    <% else %>
       <%= form.submit "Update" %>
-    <% end %>
   </div>
 <% end %>

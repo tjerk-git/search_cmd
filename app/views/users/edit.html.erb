@@ -1,9 +1,10 @@
+<%= button_to "Back to search", root_path, method: "get" %>
+  <h1>Edit your profile</h1>
+<div class="form">
+  <%= render "edit_form", user: @user %>
 
-<h1>Edit your profile</h1>
-
-<%= render "form", user: @user %>
-
-<details>
-  <summary>Delete your account:</summary>
-  <%= render "delete_form", user: @user %>
-</details>
+  <details class="danger-zone">
+    <summary>Delete your account:</summary>
+    <%= render "delete_form", user: @user %>
+  </details>
+</div>
