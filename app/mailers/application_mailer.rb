@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'tjerk.dijkstra@nhlstenden.com'
+  default from: 'search@cmdwld.nl'
   layout "mailer"
 end
