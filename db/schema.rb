@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_14_162702) do
+ActiveRecord::Schema.define(version: 2022_01_18_094150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_162702) do
     t.integer "role"
     t.integer "confirm"
     t.integer "show_email"
+    t.integer "show_teams"
     t.index ["bio"], name: "index_users_on_bio"
   end
 

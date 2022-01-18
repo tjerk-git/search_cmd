@@ -10,10 +10,12 @@
     </a>
       <% end %>
     <td>
-  
+    <% if user.show_teams == 1 %>
     <a href="<%= user.teams_link %>">
      <img src="/teams.png" class="icon">
-    </a></td></td>
+    </a>
+    <% end %>
+    </td></td>
   </tr>
 </thead>
 </table>

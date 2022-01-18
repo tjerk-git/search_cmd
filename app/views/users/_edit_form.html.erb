@@ -22,6 +22,14 @@
         Show e-mail on profile?
     </div>
 
+    <div>
+        <label class="switch">
+        <%= form.check_box :show_teams , style: "display: block;"%>
+            <span class="slider round"></span>
+        </label>
+        Show teams link on profile?
+    </div>
+
   <div>
     <%= form.label :bio, style: "display: block", value: "Describe yourself in tags" %>
     <%= form.text_area :bio, maxlength: "255", placeholder: "webdesign, research, animation, 3D, gamedesign, sound (max 255)" %>
