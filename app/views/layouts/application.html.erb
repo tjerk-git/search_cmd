@@ -16,7 +16,7 @@
       <div class="login">
         <% if logged_in? %>
             Hey, <%= current_user.name %><br>
-               <%= image_tag url_for(current_user.avatar.variant(resize_to_limit: [50, 50])) %>
+               <%= image_tag url_for(current_user.avatar.variant(resize_to_limit: [180,180])) %>
               <%= link_to "Edit your profile", edit_user_path %> or <%= link_to "Log out", logout_path %>
         <% else %>
             <%= link_to "Log in", login_path %> or <%= link_to "Claim your profile!", new_user_path %>

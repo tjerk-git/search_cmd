@@ -57,12 +57,12 @@ ActiveRecord::Schema.define(version: 2022_03_09_121848) do
     t.integer "confirm"
     t.integer "show_email"
     t.integer "show_teams"
-    t.string "cats_or_dogs"
-    t.string "coffee_or_tea"
-    t.string "glasses"
-    t.string "music"
-    t.string "patat_or_friet"
-    t.string "height"
+    t.string "cats_or_dogs", default: ""
+    t.string "coffee_or_tea", default: ""
+    t.string "glasses", default: ""
+    t.string "music", default: ""
+    t.string "patat_or_friet", default: ""
+    t.string "height", default: ""
     t.index ["bio"], name: "index_users_on_bio"
   end
 

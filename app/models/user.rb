@@ -7,7 +7,7 @@ class User < ApplicationRecord
     before_validation :create_teams_link
 
     has_one_attached :avatar do |attachable|
-      attachable.variant :thumb, resize_to_limit: [100, 100]
+      attachable.variant :thumb, resize_to_limit: [180, 180]
     end
 
     validates :avatar, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..(5.megabytes) }
