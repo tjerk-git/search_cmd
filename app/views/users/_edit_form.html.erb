@@ -10,6 +10,11 @@
   <% end %>
 
   <div>
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.file_field :avatar, placeholder: "Show us that pretty face" %>
+  </div>
+
+  <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name, placeholder: "Your full name" %>
   </div>
