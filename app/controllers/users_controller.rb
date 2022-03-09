@@ -4,7 +4,10 @@ class UsersController < ApplicationController
 
 
 	def index
-
+    @users = User.all
+    respond_to do |format|
+      format.json { render json: @users }
+    end
 	end
 
 	def new
@@ -68,6 +71,8 @@ class UsersController < ApplicationController
 						partial: "users/search_results",
 						locals: { users: @users })
 				end
+
+      
 		end
 	end
 
