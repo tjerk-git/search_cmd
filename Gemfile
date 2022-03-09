@@ -47,7 +47,10 @@ gem "bootsnap", require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
+gem 'aws-sdk', '~> 3'
+gem 'rack-cors'
+gem 'activestorage-validator'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -59,6 +62,7 @@ group :development do
   gem "web-console"
   gem "faker", "~> 2.19"
   gem 'letter_opener'
+  gem 'dotenv-rails', groups: [:development, :test]
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 

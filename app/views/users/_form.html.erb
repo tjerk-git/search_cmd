@@ -10,6 +10,11 @@
   <% end %>
 
   <div>
+    <%= form.label :avatar, style: "display: block" %>
+    <%= form.file_field :avatar, placeholder: "Show us that pretty face" %>
+  </div>
+
+  <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name, placeholder: "Your full name" %>
   </div>
@@ -22,6 +27,29 @@
   <div>
     <%= form.label :bio, style: "display: block", value: "Describe yourself in tags" %>
     <%= form.text_area :bio, maxlength: "255", placeholder: "webdesign, research, animation, 3D, gamedesign, sound (max 255)" %>
+  </div>
+
+  <div>
+    <h2>Very specific and important search information*</h2>
+    <span>not required but very fun...</span>
+     <%= form.label :cats_or_dogs, style: "display: block", value: "Cats or Dogs" %>
+     <%= select_tag(:cats_or_dogs, options_for_select(['','Cats', 'Dogs']))  %>
+
+    <%= form.label :coffee_or_tea, style: "display: block", value: "Coffee or Tea" %>
+     <%= select_tag(:coffee_or_tea, options_for_select(['','Coffee', 'Tea']))  %>
+
+     <%= form.label :glasses, style: "display: block", value: "Nearsighted?" %>
+     <%= select_tag(:glasses, options_for_select(['','Glasses', 'Lenses', 'PERFECT VISION']))  %>
+
+     <%= form.label :patat_or_friet, style: "display: block", value: "Patat or Friet?" %>
+     <%= select_tag(:patat_or_friet, options_for_select(['','Patat', 'Friet', 'Fries', 'Chips']))  %>
+
+    <%= form.label :music, style: "display: block", value: "Music taste" %>
+     <%= select_tag(:music, options_for_select(['','BEM BEM BEM', 'BOEM BOEM BOEM', 'RAAAAAARGH', 'La la la la', 'Du du du du du', 'Love bladiebla love', 'Ik heb hier een brief', 'no']))  %>
+     
+    <%= form.label :height, style: "display: block", value: "Music taste" %>
+    <%= select_tag(:height, options_for_select(['', '50cm', '100cm', '150cm', '180cm', '200cm', '210cm', '220cm', 'GIANT']))  %>
+     
   </div>
 
   <div>

@@ -1,12 +1,13 @@
+
 class UsersController < ApplicationController
   before_action :set_user, only: %i[new show destroy ]
   before_action :authorized, only: [:edit, :update]
 
-
 	def index
     @users = User.all
     respond_to do |format|
-      format.json { render json: @users }
+      format.html { render :index }
+      format.json 
     end
 	end
 
@@ -55,25 +56,6 @@ class UsersController < ApplicationController
         redirect_to edit_user_path, info: "Something went wrong." 
       end
     end
-  end
-
-	def search
-		if params[:name_search].present?
-			@users = User.filter_by_name(params[:name_search])
-		else
-			@users = []
-		end
-
-		respond_to do |format|
-				format.turbo_stream do
-				render turbo_stream: turbo_stream.update(
-						"search_results",
-						partial: "users/search_results",
-						locals: { users: @users })
-				end
-
-      
-		end
 	end
 
 	private
@@ -84,7 +66,12 @@ class UsersController < ApplicationController
 
 	# Only allow a list of trusted parameters through.
 	def user_params
-			params.require(:user).permit(:name, :email, :teams_link, :dribble_link, :bio, :show_email, :show_teams)
+			params.require(:user).permit(
+          :name, :email, :teams_link,
+          :dribble_link, :bio, :show_email,
+          :show_teams, :avatar, :cats_or_dogs,
+          :coffee_or_tea, :glasses, :music,
+          :patat_or_friet, :height)
 	end
 end
 
