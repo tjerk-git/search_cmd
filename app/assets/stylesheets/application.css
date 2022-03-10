@@ -32,14 +32,6 @@ body{
     font-family: "Open Sans";
 }
 
-.container{
-    max-width: 1130px;
-    padding-top:12%;
-    margin: 0 auto;
-    padding-right:5%;
-    padding-left:5%;
-}
-
 address, blockquote, dl, figure, form, ol, p, pre, table, ul {
     margin-top: 0;
     font-style: normal;
@@ -63,7 +55,6 @@ input[type=checkbox]{
     border: 2px solid #eee;
     font-size:1.2em;
 }
-
 
 textarea {
     padding: 20px;
@@ -109,30 +100,6 @@ button{
     border: 2px solid #eee;
 }
 
-.search_result{
-    background-color:rgb(88, 152, 249);
-    border-radius: 5px;
-    padding:15px;
-    width:100%;
-    margin-bottom:5px;
-}
-.search_result a{
-    text-decoration: none;
-    color:white;
-}
-
-#search_results a{
-    text-decoration: none;
-    color:white;
-}
-.search_result a:hover{
-    color:rgb(225, 225, 225);
-}
-
-.search_result:hover {
-    background-color:rgb(18, 90, 198);
-    cursor: pointer;
-}
 
 .register_link{
     color:orange!important;
