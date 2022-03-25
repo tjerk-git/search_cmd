@@ -32,14 +32,82 @@
   <div>
     <h2>Very specific and important search information*</h2>
     <span>not required but very fun...</span>
-     <%= form.label :cats_or_dogs, style: "display: block", value: "Cats or dogs" %>
-     <%= form.text_field :cats_or_dogs, placeholder: "Cats or Dogs" %>
-
+<%= form.label :shape, style: "display: block", value: "What shape are you?" %>
+    
+    <label>
+      <input type="radio" name="user[shape]" value="triangle" <% if user.shape == "triangle" %> checked <% end %>>
+      <img src="/triangle.png">
+    </label>
+    
+    <label>
+      <input type="radio" name="user[shape]" value="heart"  <% if user.shape == "heart" %> checked <% end %>>
+      <img src="/heart.png">
+    </label>
+    
+    <label>
+      <input type="radio" name="user[shape]" value="box"  <% if user.shape == "box" %> checked <% end %>>
+      <img src="/box.png">
+    </label>
+    
+    <label>
+      <input type="radio" name="user[shape]" value="circle"  <% if user.shape == "circle" %> checked <% end %>>
+      <img src="/circle.png">
+    </label>
+    
+    <label>
+      <input type="radio" name="user[shape]" value="other"  <% if user.shape == "other" %> checked <% end %> >
+      <img src="/other.png">
+    </label>
+    
+    <%= form.label :cats_or_dogs, style: "display: block", value: "Cats or dogs?" %>
+     <label>
+       <input type="radio" name="user[cats_or_dogs]" value="cats"  <% if user.cats_or_dogs == "cats" %> checked <% end %>>
+       <img src="/cat.gif">
+     </label>
+     
+     <label>
+       <input type="radio" name="user[cats_or_dogs]" value="dogs"  <% if user.cats_or_dogs == "dogs" %> checked <% end %> >
+       <img src="/dog.gif">
+     </label>
+     
+     <label>
+        <input type="radio" name="user[cats_or_dogs]" value="other"  <% if user.cats_or_dogs == "other" %> checked <% end %> >
+        <img src="/special.gif">
+      </label>
+      
      <%= form.label :coffee_or_tea, style: "display: block", value: "Coffee or Tea" %>
-     <%= form.text_field :coffee_or_tea, placeholder: "Coffee or Tea" %>
-
+     <label>
+        <input type="radio" name="user[coffee_or_tea]" value="coffee"  <% if user.coffee_or_tea == "coffee" %> checked <% end %>>
+        <img src="/coffee.gif">
+      </label>
+      
+      <label>
+        <input type="radio" name="user[coffee_or_tea]" value="tea"  <% if user.coffee_or_tea == "tea" %> checked <% end %> >
+        <img src="/tea.gif">
+      </label>
+      
+      <label>
+         <input type="radio" name="user[coffee_or_tea]" value="other"  <% if user.coffee_or_tea == "other" %> checked <% end %> >
+         <img src="/special.gif">
+       </label>
+     
+    
     <%= form.label :glasses, style: "display: block", value: "Do you have glasses?" %>
-    <%= form.text_field :glasses, placeholder: "I've got glasses yeah, no lenses, wait" %>
+    
+     <label>
+      <input type="radio" name="user[glasses]" value="glasses"  <% if user.glasses == "glasses" %> checked <% end %>>
+      <img src="/glasses.gif">
+    </label>
+    
+    <label>
+      <input type="radio" name="user[glasses]" value="no-glasses"  <% if user.glasses == "no-glasses" %> checked <% end %> >
+      <img src="/no-glasses.gif">
+    </label>
+    
+    <label>
+       <input type="radio" name="user[glasses]" value="other"  <% if user.glasses == "other" %> checked <% end %> >
+       <img src="/special.gif">
+     </label>
 
     <%= form.label :patat_or_friet, style: "display: block", value: "Patat or Friet?" %>
     <%= form.text_field :patat_or_friet, placeholder: "Patat or Friet or Chips or Fries" %>

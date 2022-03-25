@@ -71,7 +71,7 @@ class UsersController < ApplicationController
           :dribble_link, :bio, :show_email,
           :show_teams, :avatar, :cats_or_dogs,
           :coffee_or_tea, :glasses, :music,
-          :patat_or_friet, :height)
+          :patat_or_friet, :height, :shape)
 	end
 end
 

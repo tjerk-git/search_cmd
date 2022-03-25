@@ -9,4 +9,5 @@ json.glasses user.glasses
 json.patat_or_friet user.patat_or_friet
 json.music user.music
 json.height user.height
+json.shape user.shape
 json.image_url url_for(user.avatar) if user.avatar.attached?
