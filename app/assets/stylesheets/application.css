@@ -42,12 +42,6 @@ input{
     width:100%;
 }
 
-input[type=search], input[type=text] {
-    padding: 20px;
-    margin: 10px 0;
-    border: 2px solid #eee;
-    font-size:1.2em;
-}
 
 input[type=checkbox]{
     padding: 20px;
@@ -62,26 +56,10 @@ textarea {
     border: 2px solid #eee;
     font-size:0.8em;
     width:100%;
-    height:max-content;
+    font-family: "Open Sans";
+    color:rgb(65, 65, 65)
 }
 
-input[type=submit]{
-    padding:20px;
-    border-radius: 10px;
-    background-color:rgb(113, 188, 254);
-    font-size:1em;
-    color:white;
-    border: 2px solid #eee;
-}
-
-input[type=submit]:hover{
-    padding:20px;
-    border-radius: 10px;
-    background-color:rgb(68, 168, 255);
-    font-size:1em;
-    color:white;
-    border: 2px solid #eee;
-}
 
 button{
     padding:20px;
@@ -194,9 +172,6 @@ border-radius: 34px;
 border-radius: 50%;
 }
 
-form div{
-    padding:10px;
-}
 
 .form {
     background-color: rgb(250, 250, 250);
@@ -214,7 +189,7 @@ form div{
 
 
 /* HIDE RADIO */
-[type=radio] { 
+[type=radio] {
   position: absolute;
   opacity: 0;
   width: 0;
@@ -239,15 +214,208 @@ label img{
   width: 150px;
 }
 
-@media only screen and (max-width: 390px) {
-    body {
-      font-size:1.0em;
-    }
-    input[type=search], input[type=text] {
-        padding: 20px;
-        margin: 10px 0;
-        border: 2px solid #eee;
-        font-size:1.0em;
-    }
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin-bottom:10px;
   }
+
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    width:500px;
+    line-height:1.5;
+  }
+
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .red{
+    background-color:#FDA000!important;
+  }
+
+  .blue{
+    background-color:#5669FF!important;
+  }
+
+  .green{
+    background-color:#23AE5F!important;
+  }
+
+  .orange{
+    background-color:#FF6E00!important;
+  }
+
+  .black{
+    background-color:#000!important;
+  }
+
+  .pink{
+    background-color:#ff967d!important;
+  }
+
+  .aqua{
+    background-color:#4DCED0!important;
+  }
+
+  .darkred{
+    background-color:#FF3840!important;
+  }
+
+
+
+.canvas{
+  padding:10px;
+  width:100%;
+}
+
+.top_canvas{
+  width:20%;
+  float:left;
+}
+
+.top_canvas h1{
+  font-size:2.8rem;
+  font-weight:bold;
+}
+
+.top_canvas h2{
+  font-size:1.0rem;
+}
+
+#comp_bar{
+  width:100%;
+}
+
+#comp_select{
+  background:#000000;
+  color:white;
+  padding:20px;
+  border:2px solid #ffffff;
+  border-radius:10px;
+  margin:10px;
+  font-size:1.6rem;
+}
+
+#lvl_select{
+  background:#ff967d;
+  color:white;
+  padding:20px;
+  border:2px solid #ffffff;
+  border-radius:10px;
+  margin:10px;
+  font-size:1.6rem;
+}
+
+#ec_select{
+  background:black;
+  color:white;
+  padding:20px;
+  border:2px solid #ffffff;
+  border-radius:10px;
+  margin:10px;
+  font-size:1.6rem;
+}
+
+#canvas_save {
+  padding:20px;
+  border-radius: 10px;
+  background-color:white;
+  font-size:0.9em;
+  border: 2px solid #eee;
+  margin:10px 10px 10px 0px;
+  width:150px;
+  cursor:pointer;
+  display:inline-block;
+}
+
+#canvas_share{
+  padding:10px;
+  border-radius: 10px;
+  background-color:white;
+  font-size:0.9em;
+  border: 2px solid #eee;
+  width:50px;
+  text-align:center;
+  display:inline-block;
+  cursor:pointer;
+}
+
+#canvas_save:hover {
+  background:#23AE5F;
+  color:white;
+  font-weight:bold;
+}
+
+#canvas_share img{
+  width:24px;
+}
+
+#canvas_share:hover {
+  background:#5669FF;
+}
+
+#canvas_content {
+  width:100%;
+  float:left;
+  margin-top:20px;
+}
+
+#comp_title{
+  display:inline-block;
+}
+
+#comp_lvl{
+  display:inline-block;
+}
+
+#comp_ec{
+  display:inline-block;
+}
+
+.form_box {
+  width:50%;
+  float:left;
+  border: 2px solid black;
+  padding:20px;
+  font-size:1.0rem;
+}
+
+.why{
+  width:30%;
+  height:200px;
+  border-bottom:none;
+}
+
+.why textarea{
+  height:110px;
+}
+
+.outcome {
+  width:70%;
+  min-height:200px;
+  border-left:none;
+  border-bottom:none;
+}
+
+
+.buttons{
+  display:inline-block;
+  float:right;
+}
+
+.tools {
+  float:left;
+  width:80%;
+}
+
+
 

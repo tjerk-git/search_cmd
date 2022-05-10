@@ -1,0 +1,146 @@
+<%= javascript_include_tag "jquery-3.4.1.min.js" %>
+<%= javascript_include_tag "website.js" %>
+
+<div class="canvas">
+  <div class="top_canvas">
+    <h1>CMD CANVAS </h1>
+    <h2>Ingevuld door: <strong><%= @canvas.name %></strong></h2>
+  </div>
+
+<%= form_with url: "/canvas/show/#{@canvas.slug}", model: @canvas, id: "comp_bar" ,method: :patch do |form|  %>
+  <input type="hidden" id="uuid" value="<%= @canvas.comp + @canvas.lvl %>">
+
+      <div class="tools">
+        <div id="comp_title" data-comp="1">
+          <select name="canva[comp]" id="comp_select">
+            <option <% if @canvas.comp == "1"  %> selected="selected" <% end %> value="1">Onderzoeken</option>
+            <option <% if @canvas.comp == "2"  %> selected="selected" <% end %>value="2">Creëren</option>
+            <option <% if @canvas.comp == "3"  %> selected="selected" <% end %>value="3">Communiceren</option>
+            <option <% if @canvas.comp == "4"  %> selected="selected" <% end %>value="4">Organiseren</option>
+            <option <% if @canvas.comp == "5"  %> selected="selected" <% end %>value="5">Leren</option>
+          </select>
+        </div>
+
+        <div id="comp_lvl" data-lvl="1">
+
+          <select name="canva[lvl]" id="lvl_select">
+            <option <% if @canvas.lvl == "1"  %> selected="selected" <% end %>value="1">Niveau 1</option>
+            <option <% if @canvas.lvl == "2"  %> selected="selected" <% end %>value="2">Niveau 2</option>
+            <option <% if @canvas.lvl == "3"  %> selected="selected" <% end %>value="3">Niveau 3</option>
+          </select>
+        </div>
+
+        <div id="comp_ec">
+          <select name="canva[ec]" id="ec_select">
+            <option <% if @canvas.ec == "3"  %> selected="selected" <% end %> value="3">3 EC</option>
+            <option <% if @canvas.ec == "6"  %> selected="selected" <% end %> value="6">6 EC</option>
+            <option <% if @canvas.ec == "9"  %> selected="selected" <% end %> value="9">9 EC</option>
+            <option <% if @canvas.ec == "12"  %> selected="selected" <% end %> value="12">12 EC</option>
+          </select>
+        </div>
+
+        <div class="buttons">
+          <%= form.submit "Save", id: "canvas_save" %>
+          <div id="canvas_share"><%= image_tag "share.png" %></div>
+        </div>
+        </div>
+
+  <div id="canvas_content">
+    <div class="form_box why">
+      <label for="why" class="font-bold">REASON WHY:</label>
+      <%= form.text_area :reason, placeholder: "Waarom wil je dit leren?", class: "p-2 border-2 border-black" %>
+    </div>
+
+    <div class="form_box outcome">
+      <div class="outcomes">
+        <div class="hidden" data-uuid="11">
+          <h2>"De CMD'er onderzoekt het probleem en test, verbetert en implementeert de oplossing."</h2>
+          Je onderzoekt een gegeven, gedefinieerd probleem met behulp van aangereikte methodieken voor desk- en fieldresearch.<br>
+          Je formuleert een praktische oplossing vanuit de onderzoeksresultaten en de belangen van de doelgroep.<br>
+          Je betrekt de doelgroep bij dit proces.
+        </div>
+
+        <div class="hidden" data-uuid="12">
+          <h2>""</h2>
+          Je onderzoekt een gegeven, gedefinieerd probleem met behulp van aangereikte methodieken voor desk- en fieldresearch.
+          Je formuleert een praktische oplossing vanuit de onderzoeksresultaten en de belangen van de doelgroep.
+          Je betrekt de doelgroep bij dit proces.
+        </div>
+
+        <div class="hidden" data-uuid="13">
+          <h2>""</h2>
+        </div>
+
+        <div class="hidden" data-uuid="21">
+          <h2>""</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="form_box">
+      <div class="tooltip">
+        <%= image_tag "tip.png" %>
+        <label for="goals">Leerdoelen:</label>
+        <span class="tooltiptext">Gebruik dit canvas om richting te geven wat je wilt leren en hoe je daar kunt komen. Door alle velden in te vullen werk je aan zowel kennis, houding en vaardigheids- aspecten van de competentie.<br>
+        <br>Zorg ervoor dat alle vier velden hieronder worden ingevuld en wees zo specifiek mogelijk als je hieronder bronnen, mensen, boeken, sites, etc. noemt.</span>
+      </div>
+        <%= form.text_area :goals, placeholder: "TOELICHTING: Gebruik dit canvas om richting te geven wat je wilt leren en hoe je daar kunt komen. Door alle velden in te vullen werk je aan zowel kennis, houding en vaardigheids- aspecten van de competentie." %>
+    </div>
+
+    <div class="form_box">
+      <div class="tooltip">
+        <%= image_tag "tip.png" %>
+        <label for="feedback" class="font-bold block">Feedback:</label>
+        <span class="tooltiptext">Samenvatting van eerder ontvangen feedback.</span>
+      </div>
+      <%= form.text_area :feedback, placeholder: "Samenvatting van eerder ontvangen feedback" %>
+    </div>
+
+ <div class="form_box">
+     <div class="tooltip">
+       <%= image_tag "tip.png" %>
+      <label for="inspiration">Inspiratie:</label>
+      <span class="tooltiptext">Welke voorbeelden ga je bekijken? Waar en hoe ga je je oriënteren?</span>
+     </div>
+      <%= form.text_area :inspiration, placeholder: "Welke voorbeelden ga je bekijken? Waar en hoe ga je je oriënteren?" %>
+  </div>
+
+  <div class="form_box">
+    <div class="tooltip">
+      <%= image_tag "tip.png" %>
+     <label for="practice">Praktijk:</label>
+     <span class="tooltiptext">Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc.</span>
+    </div>
+     <%= form.text_area :practice, placeholder: "Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc." %>
+   </div>
+
+   <div class="form_box">
+     <div class="tooltip">
+       <%= image_tag "tip.png" %>
+       <label for="consult">Consulten en Feedback:</label>
+       <span class="tooltiptext">Welke experts ga je raadplegen?</span>
+     </div>
+     <%= form.text_area :consults, placeholder: "Welke experts ga je raadplegen?" %>
+   </div>
+
+   <div class="form_box">
+      <div class="tooltip">
+        <%= image_tag "tip.png" %>
+        <label for="summary">Onderbouwing:</label>
+        <span class="tooltiptext">Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen.</span>
+      </div>
+      <%= form.text_area :foundation, placeholder: "Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen"%>
+    </div>
+
+   <div class="form_box">
+     <div class="tooltip">
+       <%= image_tag "tip.png" %>
+        <label for="summary">Samenvatting:</label>
+        <span class="tooltiptext">Herschrijf hier s.m.a.r.t. de leeruitkomst naar jouw specifieke situatie</span>
+     </div>
+       <%= form.text_area :summary, placeholder: "Herschrijf hier s.m.a.r.t. de leeruitkomst naar jouw specifieke situatie" %>
+   </div>
+
+<% end %>
+
+</div>

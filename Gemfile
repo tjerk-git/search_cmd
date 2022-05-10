@@ -31,7 +31,13 @@ gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
 
+gem "faker", "~> 2.19"
+
+gem 'random-word', '~> 1.3'
+
 gem 'mini_magick'
+
+gem 'prawn'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -62,7 +68,6 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem "faker", "~> 2.19"
   gem 'letter_opener'
   gem 'dotenv-rails', groups: [:development, :test]
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
