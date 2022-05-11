@@ -1,14 +1,7 @@
-<h1>Canvas#index</h1>
-<p>Hey there! You can create your own CMD PPO canvas here.</p>
-
 <%= form_with(model: @canvas) do |form| %>
-
-  <div>
-  <%= form.label :name, style: "display: block" %>
-  <%= form.text_field :name, placeholder: "Your name please" %>
-  </div>
-
-  <%= form.submit "Create personal canvas" %>
-
+  <div class="canvas_form">
+    <h1>You can create your own CMD PPO canvas here!</h1>
+    <%= form.text_field :name, placeholder: "Your name please" %>
+    <%= form.submit "Create personal canvas", id: "canvas_form_submit" %>
   </div>
 <% end %>

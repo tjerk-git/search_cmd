@@ -303,7 +303,6 @@ label img{
   border-radius:10px;
   margin:10px;
   font-size:1.6rem;
-  -webkit-appearance:none;
 }
 
 #lvl_select{
@@ -314,7 +313,6 @@ label img{
   border-radius:10px;
   margin:10px;
   font-size:1.6rem;
-  -webkit-appearance:none;
 }
 
 #ec_select{
@@ -325,7 +323,6 @@ label img{
   border-radius:10px;
   margin:10px;
   font-size:1.6rem;
-  -webkit-appearance:none;
 }
 
 
@@ -390,9 +387,15 @@ label img{
   width:50%;
   float:left;
   border: 2px solid black;
-  padding:20px;
   font-size:1.0rem;
   min-height:250px;
+  line-height:1.6;
+  padding:10px;
+}
+
+.form_box h2{
+  margin:0;
+  font-size:1.2rem;
 }
 
 
@@ -400,6 +403,7 @@ label img{
   width:30%;
   height:200px;
   min-height:200px;
+  border:0;
 }
 
 .why textarea{
@@ -502,6 +506,32 @@ label img{
         padding:0px;
         visibility:hidden;
     }
+}
+
+.canvas_form{
+  width:50%;
+  margin:0 auto;
+}
+
+.canvas_form input{
+  padding:20px;
+  font-size:1.2rem;
+  margin:10px;
+}
+
+#canvas_form_submit{
+  padding:20px;
+  border-radius: 10px;
+  background-color:white;
+  font-size:0.9em;
+  border: 2px solid #eee;
+  margin:10px 10px 10px 0px;
+}
+
+#canvas_form_submit:hover{
+ background-color:#23AE5F;
+ color:white;
+ cursor:pointer;
 }
 
 
