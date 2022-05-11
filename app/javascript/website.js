@@ -29,6 +29,14 @@ $(document).ready((function(e) {
       showOutcome(uuid);
   });
 
+  $('#canvas_share').click(function(){
+      $('#overlay').fadeIn(200)
+  });
+
+  $('.close_button').click(function(){
+    $('#overlay').fadeOut(200)
+  });
+
 	function showOutcome(uuid){
 		$(".outcomes > *").css('display','none');
 		$(".outcomes").find(`[data-uuid='${uuid}']`).show();

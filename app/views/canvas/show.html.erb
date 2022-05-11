@@ -1,6 +1,16 @@
 <%= javascript_include_tag "jquery-3.4.1.min.js" %>
 <%= javascript_include_tag "website.js" %>
 
+<div id="overlay">
+  <div class="send_form">
+      <div class="close_button">X</div>
+      <h1>❤️❤️ CMD Canvas ❤️❤️</h1>
+        Hey, <%= @canvas.name %>
+      <h2>🚀 Grab your link & share</h2>
+      <input type="text" value="<%= request.url %>">
+  </div>
+</div>
+
 <div class="canvas">
   <div class="top_canvas">
     <h1>CMD CANVAS </h1>
@@ -122,7 +132,7 @@
      <%= form.text_area :consults, placeholder: "Welke experts ga je raadplegen?" %>
    </div>
 
-   <div class="form_box">
+   <div class="form_box build">
       <div class="tooltip">
         <%= image_tag "tip.png" %>
         <label for="summary">Onderbouwing:</label>
@@ -130,15 +140,6 @@
       </div>
       <%= form.text_area :foundation, placeholder: "Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen"%>
     </div>
-
-   <div class="form_box">
-     <div class="tooltip">
-       <%= image_tag "tip.png" %>
-        <label for="summary">Samenvatting:</label>
-        <span class="tooltiptext">Herschrijf hier s.m.a.r.t. de leeruitkomst naar jouw specifieke situatie</span>
-     </div>
-       <%= form.text_area :summary, placeholder: "Herschrijf hier s.m.a.r.t. de leeruitkomst naar jouw specifieke situatie" %>
-   </div>
 
 <% end %>
 

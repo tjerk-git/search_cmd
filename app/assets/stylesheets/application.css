@@ -387,12 +387,14 @@ label img{
   border: 2px solid black;
   padding:20px;
   font-size:1.0rem;
+  min-height:250px;
 }
+
 
 .why{
   width:30%;
   height:200px;
-  border-bottom:none;
+  min-height:200px;
 }
 
 .why textarea{
@@ -402,8 +404,6 @@ label img{
 .outcome {
   width:70%;
   min-height:200px;
-  border-left:none;
-  border-bottom:none;
 }
 
 
@@ -416,6 +416,53 @@ label img{
   float:left;
   width:80%;
 }
+
+.build{
+  border-bottom:3px solid black;
+}
+
+#overlay{
+  width:100vw;
+  height:100vh;
+  background:rgb(0, 0, 0);
+  position:absolute;
+  top:0;
+  z-index:1;
+  display:none;
+}
+
+.send_form{
+  padding:20px;
+  margin:0 auto;
+  background:white;
+  color:#000000;
+  width:30%;
+  margin-top:150px;
+  position:relative;
+  border: 4px solid #FF6E00;
+  outline: 5px solid #5669FF;
+}
+
+
+.send_form h1{
+  font-size:2.6rem;
+}
+
+.send_form input{
+  padding:10px;
+  border:2px solid black;
+}
+
+.close_button{
+  color:rgb(0, 0, 0);
+  font-size:2.2rem;
+  font-weight:bold;
+  right:20px;
+  top:20px;
+  position:absolute;
+  cursor:pointer;
+}
+
 
 
 
