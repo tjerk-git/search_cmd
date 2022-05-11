@@ -12,8 +12,9 @@ class Canva < ApplicationRecord
   def to_slug
     adj = Faker::Hipster.word
     word = Faker::GreekPhilosophers.name
-    name = self.name
+    name = self.name.parameterize(separator: '-')
     thing = word + "-" + adj + "-" + name
     "#{thing.downcase}"
   end
+
 end
