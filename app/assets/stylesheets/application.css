@@ -303,6 +303,7 @@ label img{
   border-radius:10px;
   margin:10px;
   font-size:1.6rem;
+  -webkit-appearance:none;
 }
 
 #lvl_select{
@@ -313,6 +314,7 @@ label img{
   border-radius:10px;
   margin:10px;
   font-size:1.6rem;
+  -webkit-appearance:none;
 }
 
 #ec_select{
@@ -323,7 +325,9 @@ label img{
   border-radius:10px;
   margin:10px;
   font-size:1.6rem;
+  -webkit-appearance:none;
 }
+
 
 #canvas_save {
   padding:20px;
@@ -334,7 +338,8 @@ label img{
   margin:10px 10px 10px 0px;
   width:150px;
   cursor:pointer;
-  display:inline-block;
+  position: sticky;
+  top: 0;
 }
 
 #canvas_share{
@@ -463,6 +468,40 @@ label img{
   cursor:pointer;
 }
 
+.alert{
+  width:100%;
+  padding:20px;
+  background:#23AE5F;
+  color:white;
+  text-align:center;
+  font-size:1.6rem;
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  transition: all 0.5s ease-out;
+}
 
+@keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        padding:0px;
+        visibility:hidden;
+    }
+}
+@-webkit-keyframes cssAnimation {
+    to {
+        width:0;
+        height:0;
+        padding:0px;
+        visibility:hidden;
+    }
+}
 
 

@@ -3,11 +3,14 @@ var $ = jQuery.noConflict();
 $(document).ready((function(e) {
 	let colors = ['black', 'blue', 'green', 'orange', 'darkred'];
 	let lvl_colors = ['pink', 'aqua', 'darkred'];
-  var uuid = "";
+  var uuid = "11";
   var comp = "";
   var lvl  = "";
 
-  uuid = $('#uuid').val();
+  if($('#uuid').val() !== "") {
+    uuid = $('#uuid').val();
+  }
+
   showOutcome(uuid);
 
   $("#comp_select").change(function() {
