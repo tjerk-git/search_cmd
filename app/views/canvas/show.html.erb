@@ -57,7 +57,7 @@
   <div id="canvas_content">
     <div class="form_box why">
       <label for="why" class="font-bold">REASON WHY:</label>
-      <%= form.text_area :reason, placeholder: "Waarom wil je dit leren?", class: "p-2 border-2 border-black" %>
+      <%= form.text_area :reason, :value => @canvas.reason, placeholder: "Waarom wil je dit leren?", class: "p-2 border-2 border-black" %>
     </div>
 
     <div class="form_box outcome">
@@ -179,7 +179,7 @@
         <span class="tooltiptext">Gebruik dit canvas om richting te geven wat je wilt leren en hoe je daar kunt komen. Door alle velden in te vullen werk je aan zowel kennis, houding en vaardigheids- aspecten van de competentie.<br>
         <br>Zorg ervoor dat alle vier velden hieronder worden ingevuld en wees zo specifiek mogelijk als je hieronder bronnen, mensen, boeken, sites, etc. noemt.</span>
       </div>
-        <%= form.text_area :goals, placeholder: "TOELICHTING: Gebruik dit canvas om richting te geven wat je wilt leren en hoe je daar kunt komen. Door alle velden in te vullen werk je aan zowel kennis, houding en vaardigheids- aspecten van de competentie." %>
+        <%= form.text_area :goals, :value => @canvas.goals, placeholder: "TOELICHTING: Gebruik dit canvas om richting te geven wat je wilt leren en hoe je daar kunt komen. Door alle velden in te vullen werk je aan zowel kennis, houding en vaardigheids- aspecten van de competentie." %>
     </div>
 
     <div class="form_box">
@@ -188,7 +188,7 @@
         <label for="feedback" class="font-bold block">Feedback:</label>
         <span class="tooltiptext">Samenvatting van eerder ontvangen feedback.</span>
       </div>
-      <%= form.text_area :feedback, placeholder: "Samenvatting van eerder ontvangen feedback" %>
+      <%= form.text_area :feedback, :value => @canvas.feedback, placeholder: "Samenvatting van eerder ontvangen feedback" %>
     </div>
 
  <div class="form_box">
@@ -197,7 +197,7 @@
       <label for="inspiration">Inspiratie:</label>
       <span class="tooltiptext">Welke voorbeelden ga je bekijken? Waar en hoe ga je je oriënteren?</span>
      </div>
-      <%= form.text_area :inspiration, placeholder: "Welke voorbeelden ga je bekijken? Waar en hoe ga je je oriënteren?" %>
+      <%= form.text_area :inspiration, :value => @canvas.inspiration, placeholder: "Welke voorbeelden ga je bekijken? Waar en hoe ga je je oriënteren?" %>
   </div>
 
   <div class="form_box">
@@ -206,7 +206,7 @@
      <label for="practice">Praktijk:</label>
      <span class="tooltiptext">Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc.</span>
     </div>
-     <%= form.text_area :practice, placeholder: "Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc." %>
+     <%= form.text_area :practice, :value => @canvas.practice, placeholder: "Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc." %>
    </div>
 
    <div class="form_box">
@@ -215,7 +215,7 @@
        <label for="consult">Consulten en Feedback:</label>
        <span class="tooltiptext">Welke experts ga je raadplegen?</span>
      </div>
-     <%= form.text_area :consults, placeholder: "Welke experts ga je raadplegen?" %>
+     <%= form.text_area :consults, :value => @canvas.consults, placeholder: "Welke experts ga je raadplegen?" %>
    </div>
 
    <div class="form_box build">
@@ -224,7 +224,7 @@
         <label for="summary">Onderbouwing:</label>
         <span class="tooltiptext">Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen.</span>
       </div>
-      <%= form.text_area :foundation, placeholder: "Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen"%>
+      <%= form.text_area :foundation, :value => @canvas.foundation, placeholder: "Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen"%>
     </div>
 
 <% end %>
