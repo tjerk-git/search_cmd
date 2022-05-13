@@ -10,7 +10,8 @@ class CanvasController < ApplicationController
   end
 
   def update
-    @canvas = Canva.update(canvas_params)
+    @canvas = Canva.find_by_slug(params[:slug])
+    @canvas.update(canvas_params)
     redirect_to canvas_show_path(params[:slug]), flash: {notice: "Je canvas is opgeslagen!"}
   end
 
