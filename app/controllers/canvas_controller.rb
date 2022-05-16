@@ -2,17 +2,21 @@ class CanvasController < ApplicationController
   before_action :set_canvas, only: %i[new show destroy]
 
   def index
-    @canvas = Canva.new()
+    @canvas = Canva.new
   end
 
   def show
 
   end
 
+  def old
+    @canvas = Canva.last
+  end
+
   def update
     @canvas = Canva.find_by_slug(params[:slug])
     @canvas.update(canvas_params)
-    redirect_to canvas_show_path(params[:slug]), flash: {notice: "Je canvas is opgeslagen!"}
+    redirect_to canvas_show_path(@canvas.slug), flash: {notice: "Je canvas is opgeslagen!"}
   end
 
   def create

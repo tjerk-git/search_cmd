@@ -36,6 +36,10 @@ $(document).ready((function(e) {
       $('#overlay').fadeIn(200)
   });
 
+  $('#canvas_print').click(function(){
+      window.print()
+  });
+
   $('.close_button').click(function(){
     $('#overlay').fadeOut(200)
   });
