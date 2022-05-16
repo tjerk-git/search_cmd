@@ -270,7 +270,27 @@ label img{
     background-color:#FF3840!important;
   }
 
+.top_bar{
+  background:black;
+  padding:15px;
+  color:white;
+}
 
+.full_black_bar{
+  width:100%;
+  float:left;
+  padding-left:10px;
+  background:black;
+  color:white;
+}
+
+.full_black_bar h3{
+  font-size:20px;
+}
+
+.top_bar h1{
+  font-size:30px;
+}
 
 .canvas{
   padding:10px;

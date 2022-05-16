@@ -1,6 +1,10 @@
 <%= javascript_include_tag "jquery-3.4.1.min.js" %>
 <%= javascript_include_tag "website.js" %>
 
+<div class="top_bar">
+    <h1>CMD CANVAS | TOOL FOR PERSONAL AND PROFESSIONAL DEVELOPMENT </h1>
+</div>
+
 <div id="overlay">
   <div class="send_form">
       <div class="close_button">X</div>
@@ -13,7 +17,6 @@
 
 <div class="canvas">
   <div class="top_canvas">
-    <h1>CMD CANVAS </h1>
     <h2>Ingevuld door: <strong><%= @canvas.name %></strong></h2>
   </div>
 
@@ -190,6 +193,10 @@
         <span class="tooltiptext">Samenvatting van eerder ontvangen feedback.</span>
       </div>
       <%= form.text_area :feedback, :value => @canvas.feedback, placeholder: "Samenvatting van eerder ontvangen feedback" %>
+    </div>
+
+    <div class="full_black_bar">
+      <h3>Leeractiviteiten:</h3>
     </div>
 
  <div class="form_box">
