@@ -27,10 +27,10 @@ class Canva < ApplicationRecord
     }
 
     if comp.blank?
-      adj = Faker::Hipster.word
+      adj = Faker::Hipster.word + "-" + rand(36**8).to_s(36)
       word = Faker::GreekPhilosophers.name
     else
-      adj = Faker::Hipster.word
+      adj = Faker::Hipster.word + "-" + rand(36**8).to_s(36)
       word = comps.key(comp + lvl)
     end
     name = self.name.parameterize(separator: '-')
