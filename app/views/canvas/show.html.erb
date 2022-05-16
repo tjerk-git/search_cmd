@@ -210,6 +210,16 @@
      <%= form.text_area :practice, :value => @canvas.practice, placeholder: "Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc." %>
    </div>
 
+   <div class="form_box build">
+     <div class="tooltip">
+       <%= image_tag "tip.png" %>
+       <label for="summary">Onderbouwing:</label>
+       <span class="tooltiptext">Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen.</span>
+     </div>
+     <%= form.text_area :foundation, :value => @canvas.foundation, placeholder: "Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen"%>
+   </div>
+
+
    <div class="form_box">
      <div class="tooltip">
        <%= image_tag "tip.png" %>
@@ -219,14 +229,6 @@
      <%= form.text_area :consults, :value => @canvas.consults, placeholder: "Welke experts ga je raadplegen?" %>
    </div>
 
-   <div class="form_box build">
-      <div class="tooltip">
-        <%= image_tag "tip.png" %>
-        <label for="summary">Onderbouwing:</label>
-        <span class="tooltiptext">Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen.</span>
-      </div>
-      <%= form.text_area :foundation, :value => @canvas.foundation, placeholder: "Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen"%>
-    </div>
 
 <% end %>
 
