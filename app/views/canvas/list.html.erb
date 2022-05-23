@@ -1,0 +1,14 @@
+<h1> This is a list of all the Canvas created </h1>
+<span>Total: <%= @canvas.count %></span>
+
+<br>
+<div class="container">
+  <table>
+  <% @canvas.each do |canvas| %>
+    <tr>
+     <td><a href="/canvas/show/<%= canvas.slug %>"><%= canvas.name %></a></td>
+     <td>updated at: <%= canvas.updated_at.to_formatted_s(:short) %> </td>
+    </tr>
+  <% end %>
+  </table>
+</div>

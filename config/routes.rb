@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'canvas/show/:slug', to: 'canvas#show', param: :slug, as: 'canvas_show'
 
   get 'canvas/old', to: 'canvas#old'
+  get 'canvas/list', to: 'canvas#list'
 
   resources :users, param: :slug do
     collection do

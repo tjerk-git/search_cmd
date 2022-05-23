@@ -27,6 +27,10 @@ class CanvasController < ApplicationController
     end
   end
 
+  def list
+    @canvas = Canva.all.order('updated_at DESC')
+  end
+
   private
 
   def set_canvas
