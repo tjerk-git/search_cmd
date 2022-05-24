@@ -6,7 +6,7 @@ class CanvasController < ApplicationController
   end
 
   def show
-
+    @canvas = Canva.find_by_slug(params[:slug])
   end
 
   def old
@@ -16,7 +16,7 @@ class CanvasController < ApplicationController
   def update
     @canvas = Canva.find_by_slug(params[:slug])
     @canvas.update(canvas_params)
-    redirect_to canvas_show_path(@canvas.slug), flash: {notice: "Je canvas is opgeslagen!"}
+    redirect_to canvas_show_path(params[:slug]), flash: { notice: "Je canvas is opgeslagen!" }
   end
 
   def create
@@ -38,6 +38,6 @@ class CanvasController < ApplicationController
   end
 
   def canvas_params
-    params.require(:canva).permit(:name, :slug, :reason, :goals, :feedback, :inspiration, :practice, :consults, :foundation, :summary, :ec, :comp, :lvl)
+    params.require(:canva).permit(:name, :reason, :goals, :feedback, :inspiration, :practice, :consults, :foundation, :summary, :ec, :comp, :lvl, :slug)
   end
 end
