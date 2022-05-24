@@ -439,7 +439,7 @@ label img{
 }
 
 .why textarea{
-  height:110px;
+  min-height:140px!important;
 }
 
 .outcome {
@@ -565,6 +565,11 @@ label img{
  color:white;
  cursor:pointer;
 }
+
+.form_box textarea {
+  min-height: 300px;
+}
+
 
 @media print {
    .noprint {
