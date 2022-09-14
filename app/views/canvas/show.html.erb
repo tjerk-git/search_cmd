@@ -1,10 +1,6 @@
 <%= javascript_include_tag "jquery-3.4.1.min.js" %>
 <%= javascript_include_tag "website.js" %>
 
-<div class="top_bar">
-    <h1>CMD CANVAS | <span class="lighter">TOOL FOR PERSONAL AND PROFESSIONAL DEVELOPMENT</span> </h1>
-</div>
-
 <div id="overlay">
   <div class="send_form">
       <div class="close_button">X</div>
@@ -15,31 +11,30 @@
       <input type="text" value="<%= request.url %>">
   </div>
 </div>
-
-<div class="canvas">
-  <div class="top_canvas">
-    <h2>Ingevuld door: <strong><%= @canvas.name %></strong></h2>
-  </div>
-
 <%= form_with url: "/canvas/show/#{@canvas.slug}", model: @canvas, id: "comp_bar" ,method: :patch do |form|  %>
   <input type="hidden" id="uuid" value="<%= @canvas.comp + @canvas.lvl %>">
+<div class="canvas--container">
+  <header>
+    <h1><a href="/">CMD CANVAS</a> |
+        <span class="tagline">Tool for personal and professional development</span>
+    </h1>
 
       <div class="tools">
         <div id="comp_title" data-comp="1">
           <select name="canva[comp]" id="comp_select">
-            <option <% if @canvas.comp == "1"  %> selected="selected" <% end %> value="1">Onderzoeken</option>
-            <option <% if @canvas.comp == "2"  %> selected="selected" <% end %>value="2">Creëren</option>
-            <option <% if @canvas.comp == "3"  %> selected="selected" <% end %>value="3">Communiceren</option>
-            <option <% if @canvas.comp == "4"  %> selected="selected" <% end %>value="4">Organiseren</option>
-            <option <% if @canvas.comp == "5"  %> selected="selected" <% end %>value="5">Leren</option>
+            <option <% if @canvas.comp == "1"  %> selected="selected" <% end %> value="1">Research</option>
+            <option <% if @canvas.comp == "2"  %> selected="selected" <% end %>value="2">Create</option>
+            <option <% if @canvas.comp == "3"  %> selected="selected" <% end %>value="3">Communicate</option>
+            <option <% if @canvas.comp == "4"  %> selected="selected" <% end %>value="4">Organize</option>
+            <option <% if @canvas.comp == "5"  %> selected="selected" <% end %>value="5">Learn</option>
           </select>
         </div>
 
         <div id="comp_lvl" data-lvl="1">
           <select name="canva[lvl]" id="lvl_select">
-            <option <% if @canvas.lvl == "1"  %> selected="selected" <% end %>value="1">Niveau 1</option>
-            <option <% if @canvas.lvl == "2"  %> selected="selected" <% end %>value="2">Niveau 2</option>
-            <option <% if @canvas.lvl == "3"  %> selected="selected" <% end %>value="3">Niveau 3</option>
+            <option <% if @canvas.lvl == "1"  %> selected="selected" <% end %>value="1">N1</option>
+            <option <% if @canvas.lvl == "2"  %> selected="selected" <% end %>value="2">N2</option>
+            <option <% if @canvas.lvl == "3"  %> selected="selected" <% end %>value="3">N3</option>
           </select>
         </div>
 
@@ -56,186 +51,140 @@
           <%= form.submit "Save", id: "canvas_save" %>
           <div id="canvas_share"><%= image_tag "share.png" %></div>
           <div id="canvas_print"><%= image_tag "print.png" %></div>
+          </div>
         </div>
-        </div>
-
-  <div id="canvas_content">
-    <div class="form_box why">
-      <label for="why" class="font-bold">REASON WHY:</label>
-      <%= form.text_area :reason, :value => @canvas.reason, placeholder: "Waarom wil je dit leren?", class: "p-2 border-2 border-black" %>
-    </div>
-
-    <div class="form_box outcome">
+  </header>
+  <div class="flex">
+      <section class="reason--why">
+          <b>REASON WHY:</b> why do you want to learn this?
+           <%= form.text_area :reason, :value => @canvas.reason %>
+      </section>
+     
+      <section class="learning--outcome">
+          <b>LEARNING OUTCOME:</b> The general level descriptions of the competency: check your mentor and <a href="http://info.cmdlwd.nl" target="_blank">CMD
+          Sharepoint</a>
+  <br><br>
       <div class="outcomes">
         <div class="hidden" data-uuid="11">
-          <h2>"De CMD'er onderzoekt het probleem en test, verbetert en implementeert de oplossing."</h2>
-          <br>
-          Je onderzoekt een gegeven, gedefinieerd probleem met behulp van aangereikte methodieken voor desk- en fieldresearch.<br>
-          Je formuleert een praktische oplossing vanuit de onderzoeksresultaten en de belangen van de doelgroep.<br>
-          Je betrekt de doelgroep bij dit proces.
+        You investigate a given defined problem using provided research methods and provided theories.<br> The goal is to identify the needs of the target group and to come up with a solution that fits the needs of the target group. <br> You involve the target group to test the extent to which the solution works and fits the needs of the target group.
         </div>
 
         <div class="hidden" data-uuid="12">
-          <h2>"De CMD'er onderzoekt het probleem en test, verbetert en implementeert de oplossing."</h2>
-          <br>
-           Je verkent een gegeven, semi gedefinieerd probleem.<br>
-           Je plaatst dit in een bredere context om de unieke context van de opdracht beter te begrijpen.<br>
-           Je kiest een methode en kan deze keuze beargumenteren.<br><br>
-           Je analyseert de onderzoeksresultaten, waarbij je alert bent op de betrouwbaarheid en toepasbaarheid van je inzichten; je gebruikt hierbij bestaande theorie.<br>
-           Je verheldert het probleem en formuleert aanbevelingen voor mogelijk oplossingen, waarbij je rekening houdt met verschillende – soms tegenstrijdige - factoren.<br>
-           Je betrekt de verschillende stakeholders bij dit proces.
+        You investigate a given semi-defined problem using a self-selected research method and self-selected theories.<br> The goal is to clarify the problem and to search for a solution direction taking into account different and sometimes conflicting needs and interests. You involve different stakeholders to test the extent to which the solution works and fits the different needs and interests.
         </div>
 
         <div class="hidden" data-uuid="13">
-          <h2>"De CMD'er onderzoekt het probleem en test, verbetert en implementeert de oplossing."</h2>
-          <br>
-          Je signaleert een complex probleem en ontwikkelt een onderzoeksrichting. <br>
-          Je interpreteert de verschillende conflicterende aspecten, belangen en waarden in je onderzoeksresultaten.<br>
-          Je werkt het vraagstuk uit met een zelfgekozen mix van onderzoeksmethodieken.<br><br>
-          Hierbij ontwikkel je een brede visie op het vraagstuk en de context waarbinnen het speelt, en plaats je deze in een maatschappelijk kader.<br>
-          Je werkt hierbij nauw samen met de verschillende stakeholders.
+You will investigate a self-selected complex problem.  You will choose your own research direction and make use of a self-selected mix of research methods and theories. <br> The goal is to develop a broad view of the problem and to look for a solution that takes into account different and sometimes conflicting interests and its social consequences. You will work closely with the various stakeholders and use a combination of test methods to test the extent to which the solution works, meets the needs and interests and is socially desirable.
         </div>
 
         <div class="hidden" data-uuid="21">
-          <h2>"De CMD’er ontwikkelt concepten en vertaalt deze naar ontwerp en creatie van multimediale oplossingen."</h2>
-          <br>
-          Je ontwerpt een passende oplossing voor een gegeven, gedefinieerd probleem.<br>
-          Je betrekt op gezette momenten de doelgroep bij het creatieproces en maakt gebruik van aangereikte basiskennis en vaardigheden.<br><br>
-          Je baseert de oplossing op inzichten en voorbeelden uit onderzoek.<br>
-          Dit levert een bruikbaar product op, waarbij je kernelementen van een bestaand idee hebt aangepast aan de toepassingscontext. 
+        You design a suitable solution for a given, defined problem. You involve the target group in the creation process at regular intervals and make use of basic knowledge and skills. You base the solution on insights and examples from research. This results in a usable product, in which you have adapted core elements of an existing idea to the application context.
         </div>
 
         <div class="hidden" data-uuid="22">
-          <h2>"De CMD’er ontwikkelt concepten en vertaalt deze naar ontwerp en creatie van multimediale oplossingen."</h2>
-          <br>
-          Je ontwerpt een doordachte oplossing voor een ingewikkeld probleem. <br>
-          Je betrekt regelmatig verschillende stakeholders bij het creatieproces en maakt gebruik van uitgebreide- zelf gekozen- en zelf eigengemaakte vakkennis en vaardigheden.<br> Je baseert de oplossing op inzichten en voorbeelden uit onderzoek. <br><br>
-          Dit levert een product op waarbij bestaande ideeën op eigen wijze zijn gecombineerd en rekening gehouden is met de mogelijke impact ervan op de doelgroep en haar directe omgeving.
+        You design a thoughtful solution to a complex problem. You regularly involve various stakeholders in the creation process and draw on extensive- self-selected- and self-created professional knowledge and skills. You base the solution on insights and examples from research. This results in a product in which existing ideas are combined in your own way and the possible impact on the target group and its immediate environment is taken into account.
         </div>
 
         <div class="hidden" data-uuid="23">
-          <h2>"De CMD’er ontwikkelt concepten en vertaalt deze naar ontwerp en creatie van multimediale oplossingen."</h2>
-          <br>
-            Je ontwerpt een inspirerende oplossing voor een complex, ongedefinieerd probleem met conflicterende aspecten. <br>
-            Je betrekt doorlopend verschillende stakeholders bij het (co)creatieproces en maakt gebruik van breed geïntegreerde-, algemene- en specialistische vaardigheden en vakkennis. <br><br> Je baseert de oplossing op inzichten uit eigen experimenten en bestaand onderzoek. <br><br> Dit levert een product op waarbij deze inzichten op een eigen manier zijn vertaald naar iets nieuws, rekening gehouden is met de maatschappelijke impact en de betekenis verder reikt dan alleen de toepassingscontext en/of dat wat onmiddellijk wordt ervaren.
+        You design an inspiring solution for a complex, undefined problem with conflicting aspects. You continuously involve various stakeholders in the (co) creation process and use broadly integrated, general and specialist skills and knowledge. You base the solution on insights from your own experiments and existing research. This results in a product in which these insights are translated into something new in your own way, the social impact is taken into account and the meaning reaches further than just the application context and/or that which is immediately experienced.
         </div>
 
         <div class="hidden" data-uuid="31">
-          <h2>"De CMD'er brengt de boodschap adequaat over aan leken, peers, stakeholders en experts."</h2>
-          <br>
-            Je hebt basale kennis van interculturele communicatie. <br> Op basis hiervan communiceer je gericht met een bepaalde doelgroep of stakeholder. <br> Je past je boodschap qua vorm, toon en inhoud hierop aan en luistert actief zodat de boodschap van zowel de zender als de ontvanger zo goed mogelijk overkomt.
+        You have basic knowledge of (intercultural) communication. On this basis you communicate in a targeted way with a particular target group or stakeholder. You adapt your message in form, tone and content to this and listen actively so that the message of both the sender and the receiver come across as well as possible.
         </div>
 
         <div class="hidden" data-uuid="32">
-          <h2>"De CMD'er brengt de boodschap adequaat over aan leken, peers, stakeholders en experts."</h2>
-          <br>
-            Je hebt genuanceerde kennis van interculturele communicatie en kiest bewust op basis hiervan een juiste aanpak om stelselmatig met verschillende doelgroepen of stakeholders te communiceren. <br> Dit leidt tot een serie uitingen die afgestemd zijn op de doelgroep of stakeholders om draagvlak en een optimaal resultaat te bewerkstelligen.
+       You have nuanced knowledge of (intercultural) communication and consciously choose the right approach based on this to systematically communicate with different target groups or stakeholders. This leads to a series of expressions that are geared to the target group or stakeholders in order to achieve support and an optimal result.
         </div>
 
         <div class="hidden" data-uuid="33">
-          <h2>"De CMD'er brengt de boodschap adequaat over aan leken, peers, stakeholders en experts."</h2>
-          <br>
-            Je bent sensitief voor de belangen en waarden van de ander en kunt die in een breder cultureel kader plaatsen. <br> Je ontwikkelt mede op basis hiervan een integrale communicatie-strategie waarin de juiste koers wordt bepaald die moet leiden tot de gewenste beeldvorming bij geselecteerde doelgroepen of stakeholders.
+      You are sensitive to the interests and values of others and can place them in a broader cultural framework. Based on this, you develop an integrated communication strategy that sets the right course to achieve the desired image with selected target groups or stakeholders.
         </div>
 
         <div class="hidden" data-uuid="41">
-          <h2>"De CMD-er draagt zorg voor het werkproces van zichzelf of van een multidisciplinair team."</h2>
-          <br>
-          Je werkt aan een duidelijke taak waarbij op voorhand goed in kaart te brengen is wat er moet gebeuren en wat het resultaat moet zijn. <br> Om het gewenste resultaat te halen binnen de beschikbare tijd maak je van tevoren een logische planning en taakindeling/verdeling en stel je duidelijke deadlines. <br><br>Tijdens het werkproces behoud je overzicht over de voortgang en los je eventuele problemen op, die het halen van de deadlines zouden kunnen beletten. Bij samenwerking motiveer je andere teamleden en spreek je ze aan als dat nodig is. <br> Je zorgt voor een gedeelde verantwoordelijkheid voor het groepsresultaat.
+      You work on a clear task in which it is easy to see in advance what has to be done and what the result has to be. In order to achieve the desired result within the time available, you make a logical planning and division of tasks in advance and you set clear deadlines. During the work process you maintain an overview of the progress and solve any problems that could prevent the deadlines from being met. When working together you motivate other team members and you speak to them when necessary. You ensure a shared responsibility for the group result.
         </div>
 
         <div class="hidden" data-uuid="42">
-          <h2>"De CMD-er draagt zorg voor het werkproces van zichzelf of van een multidisciplinair team."</h2>
-          Je hebt oog voor verschillende talenten binnen je team en zet deze in om het werkproces en het resultaat te versterken. Je draagt zorg voor de inrichting van de werkprocessen en een constructieve sfeer in de groep. Je maakt en bewaakt het overzicht hierover. Je bent assertief wanneer het nodig is, maar laat verantwoorde-lijkheden zo veel mogelijk bij de teamleden. Als aanspreekpunt ben je goed op de hoogte van wat er in de groep gebeurt. Je kunt inspelen op veranderende omstandigheden en neemt verantwoordelijkheid voor aanpassingen in de planning (of draagt taken over aan de juiste persoon). Je neemt verantwoordelijkheid voor je eigen werk, maar ook voor dat van je teamgenoten.
+        You are working on a complex task where it is difficult to map out in advance what needs to be done and what the result should be. In order to achieve an optimal result with an effective and efficient working method, you make a plan of action in advance and formulate relevant success criteria. In addition to progress, you monitor the efficiency of the work process and the quality of performance You make interventions, if necessary, to optimize the work process and achieve a better result. In cooperation you have an eye for the different talents within your team and you deploy them as well as possible. You ensure a constructive atmosphere and shared responsibility for the work process.
+
+     
         </div>
 
         <div class="hidden" data-uuid="43">
-          <h2>"De CMD-er draagt zorg voor het werkproces van zichzelf of van een multidisciplinair team."</h2>
-          Je neemt het voortouw bij de inrichting-, het bepalen van de werkwijze- en de missie en visie van een team. Hierbij maak je doeltreffend gebruik van de (culturele) diversiteit binnen de groep. Je neemt (mede) verantwoordelijkheid voor je eigen werk en dat van anderen. Je kunt werkprocessen vanuit verschillende perspectieven beoordelen en kiest de juiste interventies om je eigen effectiviteit en die van de groep te optimaliseren. Je hebt een externe focus, gericht op synergie met externe partijen. Je anticipeert op veranderende omstandigheden en neemt op adequate wijze actie.
+        You work on a complex task where it is impossible to map out in advance what needs to be done and what the result should be. To find a solution direction, you create a creative environment. To do this, you gather the right people. You create clear frameworks, provide the necessary facilities and try to remove 'disruptive peripheral issues'. During the creation process you stimulate experimentation, open communication and self-direction. You monitor internal and external developments. In this way you develop a broad perspective and progressive insight with regard to a possible solution direction. In this way you provide others with input for making decisions. You ensure a shared responsibility for the creation process.
         </div>
 
         <div class="hidden" data-uuid="51">
-          <h2>"De CMD'er reflecteert op eigen werk en handelen en deelt voor vernieuwing en ontwikkeling eigen kennis en vaardigheden."</h2>
-          <br>
-            Je stelt taak- en leerdoelen op en creëert zo druk en houvast om jezelf te motiveren. <br> Je kiest een geschikte tijd en plaats van leren. <br>Je vraagt specifieke hulp bij het zoeken naar de juiste kennis en vaardigheden en bij het beoordelen of je deze voldoende beheerst. <br><br> Je monitort de voortgang richting taakdoelen, reflecteert op je handelswijze en formuleert verbeterpunten voor het vervolg van het leerproces. Binnen een team kun je peers helpen en om hulp vragen.
+      You set task goals, creating pressure and leverage to motivate yourself. You choose an appropriate time and place for learning. You ask for specific help to find the right knowledge and skills and to assess whether you have mastered them sufficiently. You monitor your progress towards task objectives, reflect on your actions and formulate points of improvement for the continuation of the learning process. Within a team you can help peers and ask for help.
         </div>
 
         <div class="hidden" data-uuid="52">
-          <h2>"De CMD'er reflecteert op eigen werk en handelen en deelt voor vernieuwing en ontwikkeling eigen kennis en vaardigheden."</h2>
-          <br>
-          Je leert toepassingsgericht. <br> Je signaleert beperkingen in kennis en vaardigheden (K&V) en stelt taak- en leerdoelen op. Je gaat gericht op zoek naar ontbrekende K&V en kiest hierbij een leerstrategie om deze op effectieve wijze eigen te maken.<br><br> Je reflecteert op wat en hoe je hebt geleerd. Hierbij beoordeel je of je de benodigde K&V voldoende beheerst en kun je om hulp vragen bij diepgaande kennisverwerking om deze toe te kunnen passen.<br><br> Daarnaast vergelijk je jouw eigen leer- en werkgedrag met dat van anderen en word je bewust van je eigen comfort zone en wat daarbuiten ligt. <br> Binnen een multidisciplinair team kun je K&V op een effectieve manier overbrengen op je peers en vice versa. 
+        You learn application-oriented. You identify limitations in knowledge and skills (K&S) and set task and learning goals. You look for the missing K&S and choose a learning strategy to effectively make these your own. You reflect on what and how you have learned. You assess whether you have mastered the required K&V sufficiently and you can ask for help with in-depth knowledge processing in order to be able to apply it. In addition, you compare your own learning and working behavior with that of others and become aware of your own comfort zone and what lies beyond it. Within a multidisciplinary team you will be able to effectively transfer K&S to your peers and vice versa.
         </div>
 
         <div class="hidden" data-uuid="53">
-          <h2>"De CMD'er reflecteert op eigen werk en handelen en deelt voor vernieuwing en ontwikkeling eigen kennis en vaardigheden."</h2>
-          <br>
-            Je leert vanuit intrinsieke motivatie. <br> Je maakt een samenhangende set aan leerdoelen, passend bij je interesses en ambities. Je kunt informatie diepgaand verwerken om kennistransfers te kunnen maken. <br><br> Je gaat op zoek naar sparringpartners, andere opvattingen en talenten om je zelfkennis, je visie en de leer- en handelswijze van jezelf en anderen te verrijken. <br><br> Je reflecteert op wat-en hoe je hebt geleerd. <br> Je kiest hierbij eigen criteria en normen. Binnen multidisciplinaire teams kun je het gemeenschappelijke leerproces regisseren waardoor er een Community of Learning (CoL) ontstaat waarin gezamenlijk en integraal kennis wordt geconstrueerd.
+       You learn from intrinsic motivation. You create a coherent set of learning goals appropriate to your interests and aspirations. You can process information deeply to make knowledge transfers. You look for sparring partners, other views and talents to enrich your self-knowledge, your vision and the learning and acting of yourself and others. You reflect on what and how you have learned. In doing so, you choose your own criteria and standards. Within multidisciplinary teams you can direct the common learning process, creating a Community of Learning (CoL) in which knowledge is jointly and integrally constructed.
         </div>
+    </div>
+    </section>
+      <section class="explanation">
+          <b>EXPLANATION:</b> Use this canvas to organize what you want to learn and how to get there. By
+          filling
+          in all
+          fields, you work
+          on knowledge, attitude and skill aspects of the competency.
+          Make sure to fill in all four fields below en be as specific as possible when referring to sources,
+          people, books,
+          sites, etc.
+      </section>
 
+      <section class="learning--goals">
+          <b>LEARNING GOALS:</b>
+          <%= form.text_area :goals, :value => @canvas.goals %>
+      </section>
+       
+      <section class="feedback">
+      <b>FEEDBACK:</b>
+      <%= form.text_area :feedback, :value => @canvas.feedback %>
+
+      </section>
+
+      <div class="heading--learning">
+          <h2>Learning activities</h2>
       </div>
-    </div>
+  
+  <div class="inspiration">
+                    <b>INSPIRATION:</b> Which examples are you going to watch? Where and how do you get inspired?
+                      <%= form.text_area :inspiration, :value => @canvas.inspiration %>
+                </div>
+                <div class="inspiration">
+                    <b>CREATION:</b> What are you going to make? Think products, artefacts, prototypes, sketches, etc.
+                       <%= form.text_area :practice, :value => @canvas.practice %>
+                </div>
+                <div class="inspiration">
+                    <b>THEORY:</b> What sources like books, documentaries, articles etc are you going to use and study?
+                         <%= form.text_area :foundation, :value => @canvas.foundation %>
+                </div>
+                <div class="inspiration">
+                    <b>CONSULTATIONS and FEEDBACK/-FORWARD:</b> Which experts are you going to talk to?
+                     <%= form.text_area :consults, :value => @canvas.consults %>
+                </div>
 
-    <div class="form_box">
-      <div class="tooltip">
-        <%= image_tag "tip.png" %>
-        <label for="goals">Leerdoelen:</label>
-        <span class="tooltiptext">Gebruik dit canvas om richting te geven wat je wilt leren en hoe je daar kunt komen. Door alle velden in te vullen werk je aan zowel kennis, houding en vaardigheids- aspecten van de competentie.<br>
-        <br>Zorg ervoor dat alle vier velden hieronder worden ingevuld en wees zo specifiek mogelijk als je hieronder bronnen, mensen, boeken, sites, etc. noemt.</span>
-      </div>
-        <%= form.text_area :goals, :value => @canvas.goals, placeholder: "TOELICHTING: Gebruik dit canvas om richting te geven wat je wilt leren en hoe je daar kunt komen. Door alle velden in te vullen werk je aan zowel kennis, houding en vaardigheids- aspecten van de competentie." %>
-    </div>
-
-    <div class="form_box">
-      <div class="tooltip">
-        <%= image_tag "tip.png" %>
-        <label for="feedback" class="font-bold block">Feedback:</label>
-        <span class="tooltiptext">Samenvatting van eerder ontvangen feedback.</span>
-      </div>
-      <%= form.text_area :feedback, :value => @canvas.feedback, placeholder: "Samenvatting van eerder ontvangen feedback" %>
-    </div>
-
-    <div class="full_black_bar">
-      <h3>Leeractiviteiten:</h3>
-    </div>
-
- <div class="form_box">
-     <div class="tooltip">
-       <%= image_tag "tip.png" %>
-      <label for="inspiration">Inspiratie:</label>
-      <span class="tooltiptext">Welke voorbeelden ga je bekijken? Waar en hoe ga je je oriënteren?</span>
-     </div>
-      <%= form.text_area :inspiration, :value => @canvas.inspiration, placeholder: "Welke voorbeelden ga je bekijken? Waar en hoe ga je je oriënteren?" %>
-  </div>
-
-  <div class="form_box">
-    <div class="tooltip">
-      <%= image_tag "tip.png" %>
-     <label for="practice">Praktijk:</label>
-     <span class="tooltiptext">Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc.</span>
-    </div>
-     <%= form.text_area :practice, :value => @canvas.practice, placeholder: "Wat ga je maken? Denk niet alleen aan eindproducten maar ook prototypes, experimenten, tussenproducten, etc." %>
-   </div>
-
-   <div class="form_box build">
-     <div class="tooltip">
-       <%= image_tag "tip.png" %>
-       <label for="summary">Onderbouwing:</label>
-       <span class="tooltiptext">Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen.</span>
-     </div>
-     <%= form.text_area :foundation, :value => @canvas.foundation, placeholder: "Welke bronnen en theorieën ga je bestuderen? Denk aan literatuur, vakbladen, documentaires en andere kennisbronnen"%>
-   </div>
-
-
-   <div class="form_box">
-     <div class="tooltip">
-       <%= image_tag "tip.png" %>
-       <label for="consult">Consulten en Feedback:</label>
-       <span class="tooltiptext">Welke experts ga je raadplegen?</span>
-     </div>
-     <%= form.text_area :consults, :value => @canvas.consults, placeholder: "Welke experts ga je raadplegen?" %>
-   </div>
-
-
+                <section class="explanation">
+                    <b>EXPLANATION:</b> The summary on the right is the learning outcome reshaped to your specific
+                    project and situation.
+                    Re-write the general description in <b>your</b>
+                    own words and be specific about: who, what, where and how.
+                </section>
+                <div class="summary">
+                    <b>SUMMARY: LEARNING OUTCOME IN CONTEXT:</b> Re-write the learning outcome s.m.a.r.t. to your
+                    specific
+                    project and situation
+                    <%= form.text_area :summary, :value => @canvas.summary %>
+                </div>
+</div>
+    
 <% end %>
 
 </div>

@@ -2,6 +2,10 @@ class CanvasController < ApplicationController
   before_action :set_canvas, only: %i[new show destroy]
 
   def index
+    
+  end
+
+  def new
     @canvas = Canva.new
   end
 
@@ -11,6 +15,16 @@ class CanvasController < ApplicationController
 
   def old
     @canvas = Canva.last
+  end
+
+  def search 
+      if params[:search]
+        @canvas = Canva.where("name ILIKE ?", "%" + params[:search] + "%")
+      end
+  end
+
+  def query
+   
   end
 
   def update
@@ -38,6 +52,6 @@ class CanvasController < ApplicationController
   end
 
   def canvas_params
-    params.require(:canva).permit(:name, :reason, :goals, :feedback, :inspiration, :practice, :consults, :foundation, :summary, :ec, :comp, :lvl, :slug)
+    params.require(:canva).permit(:name, :reason, :goals, :feedback, :inspiration, :practice, :consults, :foundation, :summary, :ec, :comp, :lvl, :slug, :search)
   end
 end

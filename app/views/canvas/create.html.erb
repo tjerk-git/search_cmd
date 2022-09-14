@@ -1,2 +1,19 @@
-<h1>Canvas#create</h1>
-<p>Find me in app/views/canvas/create.html.erb</p>
+
+<%= form_with(model: @canvas) do |form| %>
+  <div class="canvas_form">
+    <h1>You can create your own CMD PPO canvas here!</h1>
+    <span class="red">The name you use here, will be used to find your canvas later</span>
+    <p>a Canvas is public and can be found en read by everyone, <b>Don't</b> put personal information in there.</p>
+    <%= form.text_field :name, placeholder: "Your name please" %>
+    <%= form.submit "Create personal canvas", id: "canvas_form_submit" %>
+  </div>
+<% end %>
+
+
+<% if @canvas.errors.any? %>
+
+   <h1><%= pluralize(canvas.errors.count, ‘Error’) %> 
+   <% canvas.errors.full_messages.each do |error| %></h1>
+     <h2><%= error %></h2>
+   <% end %>
+  <% end %>

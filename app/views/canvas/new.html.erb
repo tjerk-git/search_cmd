@@ -1,0 +1,21 @@
+  <div class="large">
+  
+  <header>
+    <h1>CMD CANVAS |
+        <span class="tagline">Tool for personal and professional development</span>
+    </h1>
+  </header>
+<div class="container">
+<%= form_with(model: @canvas) do |form| %>
+  <div class="canvas_form">
+    <h1>| Create</h1>
+    <p>A canvas is <span class="underline">public</span> and can be found en read by everyone, <b>Don't</b> put personal information in there.</p>
+    <%= form.text_field :name, placeholder: "Your name please" %>
+     <span class="red">The name you use here, will be used to find your canvas later</span>
+     <br>
+    <%= form.submit "Create personal canvas", id: "canvas_form_submit" %>
+  </div>
+<% end %>
+
+</div>
+</div>

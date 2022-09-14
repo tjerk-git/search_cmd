@@ -1,0 +1,9 @@
+
+<%= form_with(model: @canvas) do |form| %>
+  <div class="canvas_form">
+    <h1>Enter your name and let me look for you!</h1>
+    <%= form.text_field :name, placeholder: "Your name please" %>
+    <%= form.submit "Find canvas", id: "canvas_form_submit" %>
+  </div>
+<% end %>
+

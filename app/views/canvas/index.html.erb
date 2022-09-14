@@ -1,8 +1,18 @@
-<%= form_with(model: @canvas) do |form| %>
-  <div class="canvas_form">
-    <h1>You can create your own CMD PPO canvas here!</h1>
-    <%= form.text_field :name, placeholder: "Your name please" %>
-    <%= form.submit "Create personal canvas", id: "canvas_form_submit" %>
-  </div>
+  <div class="large">
+  
+  <header>
+    <h1>CMD CANVAS |
+        <span class="tagline">Tool for personal and professional development</span>
+    </h1>
+  </header>
+<div class="main--container">
 
-<% end %>
+  <h1>Hey there, what do you want to do?</h1>
+
+  <%= link_to "1. Create a canvas", canvas_create_url, class: "button" %>
+  <%= link_to "2. Find a canvas by name", canvas_search_url, class: "button orange--hover" %>
+  <%= link_to "3. List all canvas created", canvas_list_url, class: "button black--hover" %>
+</div>
+
+</div>
+
