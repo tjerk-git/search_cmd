@@ -6,8 +6,8 @@
       <div class="close_button">X</div>
       <h1>❤️❤️ CMD Canvas ❤️❤️</h1>
         Hey, <%= @canvas.name %>
-      <h2> Please save your canvas before sharing</h2>
-      <h2>🚀 Grab your link & share</h2>
+      <h2> Please save your canvas!</h2>
+      <h2>🚀 Grab your link</h2>
       <input type="text" value="<%= request.url %>">
   </div>
 </div>
@@ -45,6 +45,11 @@
             <option <% if @canvas.ec == "9"  %> selected="selected" <% end %> value="9">9 EC</option>
             <option <% if @canvas.ec == "12"  %> selected="selected" <% end %> value="12">12 EC</option>
           </select>
+        </div>
+
+        <div class="url_box">
+          <span class="orange">Save this unique URL, its the only way to find this canvas </span>
+          <input type="text" value="<%= request.url %>">
         </div>
 
         <div class="buttons noprint">

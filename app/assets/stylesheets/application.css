@@ -289,10 +289,13 @@ button {
   flex-direction: row;
   align-content: center;
   align-items: center;
+  right: 31px;
+  position: absolute;
 }
 
 .tools {
   width: 100%;
+  display: flex;
 }
 
 .build {
@@ -532,6 +535,17 @@ h1 a {
   padding: 1rem;
   width: 66.7%;
   border: 2px solid black;
+}
+
+.url_box {
+  width: 30rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.url_box input {
+  padding: 1.3rem;
+  font-size: 1.3rem;
 }
 
 table {

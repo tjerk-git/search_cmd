@@ -1,9 +1,8 @@
-
+<div class="large">
 <%= form_with(model: @canvas) do |form| %>
   <div class="canvas_form">
     <h1>You can create your own CMD PPO canvas here!</h1>
-    <span class="red">The name you use here, will be used to find your canvas later</span>
-    <p>a Canvas is public and can be found en read by everyone, <b>Don't</b> put personal information in there.</p>
+    <span class="red">Canvas can only be found by its unique URL, if you lose that URL, its gone</span>
     <%= form.text_field :name, placeholder: "Your name please" %>
     <%= form.submit "Create personal canvas", id: "canvas_form_submit" %>
   </div>
@@ -17,3 +16,4 @@
      <h2><%= error %></h2>
    <% end %>
   <% end %>
+</div>

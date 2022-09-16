@@ -2,7 +2,7 @@ class CanvasController < ApplicationController
   before_action :set_canvas, only: %i[new show destroy]
 
   def index
-    
+    @canvas = Canva.new
   end
 
   def new
